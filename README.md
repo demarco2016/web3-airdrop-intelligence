@@ -6,12 +6,13 @@ Python application that monitors publicly available official Web3 announcements.
 
 ## Features
 
-- Official announcement tracking (extendable sources)
-- Snapshot and claim deadline tracking
-- Project credibility indicators (official vs community)
+- Official announcement tracking (configurable sources)
+- Snapshot and claim deadline tracking with days-remaining status
+- Project credibility scoring and labels (official vs community)
 - Duplicate detection
-- Structured JSON output
+- Structured JSON output with summary stats
 - Configurable for GitHub Actions monitoring
+- Basic unit tests and CI workflow
 
 ## Installation
 
@@ -27,13 +28,10 @@ pip install -r requirements.txt
 
 ```bash
 python monitor.py
+python -m unittest test_monitor.py -v
 ```
 
 Output is written to `output/report.json`.
-
-## GitHub Actions
-
-Add a workflow to run periodically and commit updated reports if desired.
 
 ## Disclaimer
 
